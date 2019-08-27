@@ -57,4 +57,48 @@ app.get("/scrape", function(req,res){
 });
 
 
-//
+//route to get the articles from the db
+
+app.get("/articles", function(req,res){
+    db.Article.find({})
+    .then(function(dbArticle){
+        res.json(dbArticle);
+    })
+    .catch(function(err){
+        res.json(err);
+    });
+});
+
+//route for specific Article by id with notr.
+app.get("/articles/:id", function(req,res){
+    db.Article.findOne({ _id: req.params.id})
+    .populate("note")
+    .then(function(dbArticle){
+        res.json(dbArticle);
+    })
+    .catch(function(err){
+        res.json(err);
+    });
+});
+
+//route for daving and updating articles note
+app.post("/articles/:id", function(req,res){
+    db.Note.create(req.body)
+    .then(function(dbNote){
+        return db.Article.findOneAndUpdate({ _id: req.aparams.id }, {note: dbNote._id}, { new: true});
+    })
+    .then(function(dbArticle){
+        res.json(dbArticle);
+    })
+    .catch(function(err){
+        res.json(err);
+    });
+});
+
+
+//route to get users comments
+
+//start server 
+app.listen(PORT, function(){
+    console.log("App running on port " + PORT);
+});
