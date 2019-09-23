@@ -32,7 +32,6 @@ app.get("/scrape", function(req,res){
         $("article h2").each(function(i, element){
             var result = {};
 
-
             result.title= $(this)
             .children("a")
             .text();
@@ -69,7 +68,7 @@ app.get("/articles", function(req,res){
     });
 });
 
-//route for specific Article by id with notr.
+//route for specific Article by id with notes.
 app.get("/articles/:id", function(req,res){
     db.Article.findOne({ _id: req.params.id})
     .populate("note")
@@ -81,7 +80,7 @@ app.get("/articles/:id", function(req,res){
     });
 });
 
-//route for daving and updating articles note
+//route for saving and updating articles note
 app.post("/articles/:id", function(req,res){
     db.Note.create(req.body)
     .then(function(dbNote){
