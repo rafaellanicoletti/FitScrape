@@ -1,4 +1,107 @@
-<!-- HEadline -->
-<!-- Summary -->
-<!-- URL -->
-<!--  -->
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Scraping</title>
+    <style>
+        body {
+            /* background-color: #979bad; */
+            background-image: url(https://img.freepik.com/free-vector/gradient-geometric-shape-background_78532-374.jpg?size=626&ext=jpg);
+        }
+
+        #wrapper {
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 5%;
+        }
+
+        #questions {
+            display: inline-block;
+            overflow: auto;
+            width: 60%;
+            height: 700px;
+            font-weight: bold;
+        }
+
+        #notes {
+            float: right;
+            width: 30%;
+            color: black;
+            background-color: #979bad;
+            padding: 15px;
+        }
+
+        textarea,
+        input {
+            display: block;
+            width: 100%;
+            background-color: #979bad;
+        }
+
+        input {
+            height: 150px;
+            font-size: 24px;
+        }
+
+        textarea {
+            height: 100px;
+            font-size: 18px;
+        }
+
+        .container {
+            position: relative !important;
+            margin: 0 auto !important;
+            width: 960px !important;
+            font-size: 15px;
+            border-radius: 20px;
+            padding: 20px;
+            background-color:lightblue !important;
+            text-align: justify;
+        }
+
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.text-white {
+            background-color: #232e5e !important;
+        }
+
+        ul nav.navbar-nav.navbar-right {
+            position: right !important;
+        }
+
+        .navbar.navbar-light.bg-light {
+            width: 100%;
+            background-color: navy !important;
+            padding: 0px;
+            border-top: 40px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+        
+    </nav>
+    <div id="wrapper">
+        <h1>Questions</h1>
+        <h2><i></i></h2>
+        <div class="container">
+            <div id="questions"></div>
+            <div id="notes"></div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/app.js"></script>
+
+    <br>
+    <br>
+
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1"></span>
+    </nav>
+
+</body>
+
+</html>
